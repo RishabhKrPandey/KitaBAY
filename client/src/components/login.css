@@ -1,0 +1,124 @@
+/* Container covers full viewport with gradient background */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #5c6ac4, #8b5cf6, #ec4899);
+}
+
+/* White box with padding, rounded corners and shadow */
+.login-box {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Title styling */
+.login-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4f46e5; /* Indigo-700 */
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Form layout with vertical spacing */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Each form group spacing */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label style */
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151; /* gray-700 */
+  margin-bottom: 0.25rem;
+}
+
+/* Input style */
+.input-field {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: 0.5rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input focus style */
+.input-field:focus {
+  border-color: #6366f1; /* indigo-400 */
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.4);
+}
+
+/* Password field wrapper for relative positioning */
+.password-group {
+  position: relative;
+}
+
+/* Eye icon styles */
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  color: #6b7280; /* gray-500 */
+  cursor: pointer;
+  font-size: 1.25rem;
+  user-select: none;
+}
+
+/* Button styles */
+.login-button {
+  width: 100%;
+  background-color: #4f46e5; /* indigo-600 */
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 0;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1.125rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover */
+.login-button:hover {
+  background-color: #4338ca; /* indigo-700 */
+}
+
+/* Register text */
+.register-text {
+  text-align: center;
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  color: #6b7280; /* gray-500 */
+}
+
+/* Register link */
+.register-link {
+  color: #4f46e5; /* indigo-600 */
+  font-weight: 600;
+  text-decoration: none;
+  transition: text-decoration 0.3s ease;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}

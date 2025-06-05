@@ -1,0 +1,108 @@
+/* Full viewport with gradient background */
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background: linear-gradient(45deg, #a7f3d0, #60a5fa);
+}
+
+/* Form container with fixed width and padding */
+.register-form {
+  background-color: white;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  border-radius: 1rem;
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Title style */
+.register-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #15803d;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Common input style with fixed height and larger font */
+.input-field {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1.25rem;
+  font-size: 1.125rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 0.75rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  height: 48px;
+}
+
+/* Input focus */
+.input-field:focus {
+  border-color: #34d399;
+  box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.4);
+}
+
+/* Password wrapper for relative position */
+.password-wrapper {
+  position: relative;
+}
+
+/* Password toggle text */
+.password-toggle {
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 0.9rem;
+  user-select: none;
+  font-weight: 600;
+}
+
+/* Button styling with bigger size and rounded corners */
+.register-button {
+  background-color: #15803d;
+  color: white;
+  font-weight: 700;
+  padding: 0.75rem 0;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  transition: background-color 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+/* Button hover */
+.register-button:hover {
+  background-color: #166534;
+}
+
+/* Login text below button */
+.login-text {
+  margin-top: 1.25rem;
+  font-size: 1rem;
+  text-align: center;
+  color: #4b5563;
+}
+
+/* Login link style */
+.login-link {
+  color: #15803d;
+  font-weight: 700;
+  text-decoration: none;
+  transition: text-decoration 0.3s ease;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}

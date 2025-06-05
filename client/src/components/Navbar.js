@@ -1,7 +1,6 @@
-// Navbar.js
 import React, { useState } from 'react';
 import './Navbar.css';
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch, FaSignOutAlt } from 'react-icons/fa';
 
 const genres = [
   'Bestsellers', 'Fiction', 'Science', 'Technology',
@@ -9,13 +8,11 @@ const genres = [
   'Motivation', 'Spirituality', 'Science fiction', 'Manga', 'Comics'
 ];
 
-const Navbar = ({ onSearch }) => {
+const Navbar = ({ onSearch, onCartClick, cartCount, handleLogout }) => {
   const [search, setSearch] = useState('');
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      onSearch(search);
-    }
+    if (e.key === 'Enter') onSearch(search);
   };
 
   const handleClick = () => {
@@ -24,27 +21,39 @@ const Navbar = ({ onSearch }) => {
 
   const handleGenreClick = (genre) => {
     onSearch(genre);
-    setSearch(''); // optional: clear input on genre click
+    setSearch('');
   };
 
   return (
     <nav className="navbar">
-      <div className="navbar-logo">KitaBAY
+      <div className="navbar-top-row">
+        <div className="navbar-logo">KitaBAY</div>
 
-        
-      </div>
+        <div className="navbar-search">
+          <input
+            type="text"
+            placeholder="Search for books"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            onKeyDown={handleKeyDown}
+          />
+          <button onClick={handleClick}>
+            <FaSearch />
+          </button>
+        </div>
 
-      <div className="navbar-search">
-        <input
-          type="text"
-          placeholder="Search for books"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          onKeyDown={handleKeyDown}
-        />
-        <button onClick={handleClick}>
-          <FaSearch />
-        </button>
+        <div className="navbar-cart">
+          <button className="cart-button" onClick={onCartClick}>
+            🛒 Cart ({cartCount})
+          </button>
+        </div>
+
+        <div className="navbar-right">
+          <button className="logout-button" onClick={handleLogout}>
+            <FaSignOutAlt className="mr-2" />
+            Logout
+          </button>
+        </div>
       </div>
 
       <div className="navbar-genres">

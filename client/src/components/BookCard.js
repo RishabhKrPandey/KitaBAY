@@ -1,18 +1,28 @@
 import React from 'react';
 import './BookCard.css';
 
-const BookCard = ({ book }) => {
+const BookCard = ({ book, addToCart }) => {
   const info = book.volumeInfo;
-  const sale = book.saleInfo;
 
-  // Check if price is available, otherwise default to ₹400
+  const handleCardClick = () => {
+    if (info.previewLink) {
+      window.open(info.previewLink, '_blank');
+    }
+  };
+
+  const handleAddToCart = (e) => {
+    e.stopPropagation(); // prevent card click
+    addToCart(book);
+  };
+
   const price =
-    sale?.saleability === "FOR_SALE" && sale?.retailPrice?.amount
-      ? sale.retailPrice.amount
+    book.saleInfo?.saleability === 'FOR_SALE' &&
+    book.saleInfo?.retailPrice?.amount
+      ? book.saleInfo.retailPrice.amount
       : 400;
 
   return (
-    <div className="book-card">
+    <div className="book-card" onClick={handleCardClick}>
       <img
         className="book-image"
         src={info.imageLinks?.thumbnail || 'https://via.placeholder.com/150'}
@@ -22,19 +32,9 @@ const BookCard = ({ book }) => {
         <h3 className="book-title">{info.title}</h3>
         <p className="book-author">{info.authors?.join(', ') || 'Unknown Author'}</p>
         <p className="book-price">₹{price}</p>
-
-        {info.previewLink && (
-          <a
-            className="book-preview"
-            href={info.previewLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Add to Cart 
-          </a>
-
-          
-        )}
+        <button className="book-preview" onClick={handleAddToCart}>
+          Add to Cart
+        </button>
       </div>
     </div>
   );

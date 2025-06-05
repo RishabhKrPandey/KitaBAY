@@ -79,7 +79,7 @@ img[src*="bg2.png"] {
   border-radius: 12px;
 }
 
-/* Responsive Padding */
+
 @media (max-width: 768px) {
   .main-container {
     padding: 20px;
